@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Define the style for the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Define the style for the table header cells */
+        th {
+            border-bottom: 2px solid black; /* Add a border at the bottom of the header cells */
+            padding: 8px;
+            text-align: left;
+            background-color: #f2f2f2; /* Add background color for better visibility */
+        }
+
+        /* Define the style for the table data cells */
+        td {
+            border-bottom: 1px solid #ddd; /* Add a border at the bottom of the data cells */
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="module-name">
+                <h1>SJF non-preeamtive Scheduler</h1>
+            </div>
+            <div class="clock">
+                <ul id="clock">
+
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <div class="pcb">
+                <h2>PCB Table</h2>
+                <button id="add" onclick="createJob()">Add Job</button>
+                <button id="terminate" onclick="manualTerminate()">Terminate</button>
+                <button id="reset" onclick="reset()">Reset</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="name">Process Name</th>
+                            <th id="bt">Burst Time</th>
+                            <th id="at">Arrival Time</th>
+                            <th id="wt">Waiting Time</th>
+                            <th id="tt">Turnaround Time</th>
+                            <th id="mem">Memory Usage</th>
+                            <th id="status">Status</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="ready-queue">
+                <h2>Ready Queue Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="ready-name">Process Name</th>
+                            <th id="ready-at">Burst Time</th>
+                            <th id="ready-wt">Turnaround Time</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="terminate">
+                <h2>Terminate Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="terminate-name">Process Name</th>
+                            <th id="terminate-bt">Burst Time</th>
+                            <th id="terminate-at">Arrival Time</th>
+                            <th id="terminate-wt">Waiting Time</th>
+                            <th id="terminate-tt">Turnaround Time</th>
+                            <th id="terminate-status">Status</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="io-process">
+                <h2>I/O Process Table</h2>
+                <button id="add-io" onclick="startIOProcess()">Add</button>
+                <button id="close-io" onclick="closeIOProcess()">Close</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="io-name">Process Name</th>
+                            <th id="running-time">Running Time</th>
+                            <th id="res-time">Response Time</th>
+                            <th id="io-status">Status Process</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scripts.js"></script>
+</html>
